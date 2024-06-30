@@ -22,14 +22,6 @@ function TitleScreen() {
         </h1>
 
       </div>
-      <RadialGradient
-        type="circle"
-        from="rgba(120, 119, 198, 0.5)"
-        to="hsla(0, 0%, 0%, 0)"
-        size={300}
-        origin="center"
-        className="gradient"
-      />
       <Particles color="black" quantity={200}></Particles>
       <Particles color="black" size={0.3}></Particles>
       <div

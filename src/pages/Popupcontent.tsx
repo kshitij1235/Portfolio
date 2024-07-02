@@ -1,18 +1,26 @@
 import React from "react";
-import './Popupcontent.css';
 
-function Popupcontent({ project }) {
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+interface PopupContentProps {
+  project: Project | null;
+}
+
+function Popupcontent({ project }: PopupContentProps) {
   return (
     <>
       {project ? (
         <>
-          <div className="image-placeholder">
-            <img src={project.image} alt={project.name} className="project-image" />
+          <div className="image-placeholder" style={{ textAlign: 'center', margin: '20px', height:"400px", width:"1000px" }}>
+            <img src={project.image} alt={project.name} className="project-image" style={{ maxWidth: '1000px', height: '400px', borderRadius: '8px' }} />
           </div>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="learn-more-link">
-            Learn more
-          </a>
-          <p className="project-description">{project.description}</p>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: '10px' }}>Learn more</a>
+          <p style={{ marginTop: '10px', fontSize: '16px', color: '#333' }}>{project.description}</p>
         </>
       ) : (
         <p>Select a project to see the details</p>

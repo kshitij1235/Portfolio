@@ -1,0 +1,158 @@
+/* General styles */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  background: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  align-self: flex-end;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.popup-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  border-radius: 8px;
+  border-right: 1px solid #ccc;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
+}
+
+.ProjectButton {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ProjectButton:hover {
+  background: #f0f0f0;
+}
+
+.projects-title {
+  font-family: monospace;
+  padding-left: 31%;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image-placeholder p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .popup {
+    width: 90%;
+    height: 90%;
+  }
+
+  .sidebar {
+    width: 30%;
+  }
+
+  .main-content {
+    width: 70%;
+  }
+
+  .projects-title {
+    padding-left: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup {
+    width: 95%;
+    height: 95%;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .popup-content {
+    flex-direction: column;
+  }
+
+  .projects-title {
+    padding-left: 10%;
+  }
+
+  .image-placeholder {
+    height: 150px;
+    padding: 10px;
+  }
+
+  .image-placeholder p {
+    font-size: 14px;
+  }
+}

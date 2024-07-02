@@ -1,26 +1,32 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import BlurIn from "../components/magicui/Blur-in";
-
 import RadialGradient from "../components/magicui/radial-gradient";
 import Particles from "../components/magicui/Particles";
 import NumberTicker from "../components/magicui/number-ticker";
+import ProjectPopup from "./projectsPopUp";
+import ProjectsList from "../projectList";
 
 function TitleScreen() {
   const divStyle: React.CSSProperties = {
     position: "absolute",
-    display:'flex',
+    display: 'flex',
     top: 0,
     left: 0,
     padding: "20px",
+  };
+
+  const [popup, setPopup] = useState(false);
+
+  const togglePopup = () => {
+    setPopup(!popup);
   };
 
   return (
     <Fragment>
       <div style={divStyle}>
         <h1 style={{ fontFamily: "monospace", textAlign: "center" }}>
-          <a>My projects</a> (<NumberTicker value={30}></NumberTicker>)
+          <a onClick={togglePopup}>My projects</a> (<NumberTicker value={ProjectsList.projects.length}></NumberTicker>)
         </h1>
-
       </div>
       <Particles color="black" quantity={200}></Particles>
       <Particles color="black" size={0.3}></Particles>
@@ -59,6 +65,7 @@ function TitleScreen() {
           ></BlurIn>
         </div>
       </div>
+      {popup && <ProjectPopup trigger={popup} setTrigger={setPopup} />}
     </Fragment>
   );
 }

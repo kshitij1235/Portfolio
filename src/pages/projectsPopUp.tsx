@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './project_PopUp.css';
+import './projectPopup.css'
 import Popupcontent from "./Popupcontent";
 import ProjectsList from "../projectList";
 
@@ -53,6 +53,8 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({ trigger, setTrigger }) => {
         </div>
       </div>
     </div>
+
+    
   ) : null;
 };
 
